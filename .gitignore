@@ -1,0 +1,14 @@
+# Ignore compiled Java files
+*.class
+
+# Ignore build and output folders
+out/
+target/
+build/
+
+# Ignore IDE settings folders
+.idea/
+.settings/
+
+# Ignore Node dependencies
+/node_modules/
