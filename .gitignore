@@ -1,14 +1,24 @@
-# Ignore compiled Java files
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Java compiled files
 *.class
 
-# Ignore build and output folders
+# Java archives
+*.jar
+
+# Build folders
+build/
+dist/
 out/
 target/
-build/
 
-# Ignore IDE settings folders
+# IDE files
+.vscode/
 .idea/
-.settings/
 
-# Ignore Node dependencies
-/node_modules/
+# OS files
+.DS_Store
+Thumbs.db
