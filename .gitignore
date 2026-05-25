@@ -1,24 +1,29 @@
-# Node.js
-node_modules/
-npm-debug.log
-package-lock.json
-
-# Java compiled files
-*.class
-
-# Java archives
+# Java / JUnit
 *.jar
-
-# Build folders
-build/
-dist/
-out/
+*.class
+*.war
+*.ear
 target/
 
-# IDE files
-.vscode/
-.idea/
+# JUnit specific
+junit-platform-console-standalone-*.jar
 
-# OS files
-.DS_Store
-Thumbs.db
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.idea/
+.vscode/
+*.iml
