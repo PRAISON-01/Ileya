@@ -20,7 +20,8 @@ module.exports = { get_duplicate }
 function push_zero(items){
 
     let size = items.length
-    let temp = []
+    let temp = []Data and Database Technologies
+
     let tempCount = 0
     
     for(let count = 0; count < size; count++){
