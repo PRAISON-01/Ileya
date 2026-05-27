@@ -27,3 +27,9 @@ build/
 .idea/
 .vscode/
 *.iml
+
+# Ignore all jars...
+*.jar
+
+# ...EXCEPT the junit one we need
+!junit-platform-console-standalone-1.11.0.jar
