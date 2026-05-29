@@ -38,3 +38,21 @@ function merge(array_one, array_two){
 }
 
 module.exports = { merge, flatten}
+
+function rotate_array(array, k){
+
+    const size = array.length;
+    
+    for(let count = 0; count < k; count+=1){
+        
+        let last = array[size - 1]
+        for(let index = size - 1; index > 0 ; index-=1){
+            
+            array[index] = array[index - 1];
+        }
+        array[0] = last;
+    }
+    return array;
+}
+
+module.exports = { merge, flatten, rotate_array}

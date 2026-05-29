@@ -42,11 +42,15 @@ def sort_merged_list(array_one, array_two):
 
     return final_list     
 
-def         
+def rotate_array(array, k):
 
+    size = len(array)
 
+    for count in range(0, k + 1, 1):
 
+        last = array[size - 1]
+        for index in range(size - 1, 0, -1):
+            array[index] = array[index - 1]
+        array[0] = last
 
-    
-
-
+    return array

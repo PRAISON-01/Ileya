@@ -25,5 +25,24 @@ class TestLevelThree(TestCase):
         expected = [1, 2, 3, 4, 5, 6]
         actual = level_three.sort_merged_list(array, array_two)
         self.assertEqual(actual, expected)
-        
 
+    def test_that_rotate_array_returns_array_rotated_2_times(self):
+        
+        array = [1, -9, 3, 0, 8]
+        index = 2
+        actual = level_three.rotate_array(array, index)
+        self.assertTrue(actual)
+
+    def test_that_rotate_array_returns_array_rotated_5_times(self):
+        
+        array = [1, -9, 3, 0, 8]
+        index = 5
+        actual = level_three.rotate_array(array, index)
+        self.assertTrue(actual)
+
+    def test_that_rotate_array_returns_array_rotated_0_times(self):
+        
+        array = [1, -9, 3, 0, 8]
+        index = 0
+        actual = level_three.rotate_array(array, index)
+        self.assertTrue(actual)
