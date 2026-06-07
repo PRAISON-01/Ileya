@@ -34,10 +34,10 @@ def get_vat(item_price_list):
 
 def get_bill_total(item_price_list, discount_rate):
     sub_total = get_sub_total(item_price_list)
-    
+
     discount = get_discount(item_price_list, discount_rate)
     vat = get_vat(item_price_list)
-    
+
     total_bill = sub_total - discount + vat
     return total_bill
 

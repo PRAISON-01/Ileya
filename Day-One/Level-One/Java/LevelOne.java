@@ -88,7 +88,7 @@ public class LevelOne{
         int[] newArray = new int[array.length];
 
 
-        int index =0 ;
+        int index = 0 ;
         for(int number : array ){
             if(number >= 0){
                 int root = (int) Math.sqrt(number);

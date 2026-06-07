@@ -1,17 +1,15 @@
 const input = require("prompt-sync")();
 const { getSubTotal, getRate, getDiscount, getVat, getBillTotal, getChange } = require("./CheckOutFunction")
 
-const time = new Date().toLocaleString();
-
+const time = "October 1, 1960"
 const name = input("What is the customer name => ");
 
 const itemList = [];
 const quantityList = [];
 const priceList = [];
 
-let isRunning = true;
 
-while (isRunning) {
+while (true) {
     const itemInput = input("What did the user buy? => ");
     itemList.push(itemInput);
 
@@ -101,4 +99,3 @@ console.log(`                                       Balance => ${balance.toFixed
 console.log("============================================================");
 console.log("                 THANK YOU FOR YOUR PATRONAGE                    ");
 console.log("============================================================");
-

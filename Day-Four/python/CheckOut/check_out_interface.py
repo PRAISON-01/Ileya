@@ -1,40 +1,39 @@
 
 import math
-from datetime import datetime
 
 import check_out_function
 
-time = datetime.now()
+time = "Wednesday june 13"
 product_list = []
 item_quantity_list = []
 item_price_list = []
 
-customer_name = input("Enter customer's Name => ")
+customer_name = input("Enter customer's Name >> ")
 count = 0
 
 add_more = "yes"
 while add_more.lower() == "yes":
 
-    product_input = input("What did the customer buy => ")
+    product_input = input("What did the customer buy >> ")
     print()
     product_list.append(product_input)
-    
-    item_quantity_input = int(input("How many pieces => "))
+
+    item_quantity_input = int(input("How many pieces >> "))
     print()
     item_quantity_list.append(item_quantity_input)
 
-    item_price_input = int(input("How much per unit => "))
+    item_price_input = int(input("How much per unit >> #"))
     print()
     item_price_list.append(item_price_input)
 
-    add_more = input("Add more items => ")
+    add_more = input("Add more items >> ")
     print()
     count += 1
 
 print()
-cashier_name = input("What is your name => ")
+cashier_name = input("What is your name >> ")
 print()
-discount_rate = int(input("How much discount will he get => "))
+discount_rate = int(input("How much discount will he get >> "))
 
 total_item_prices = []
 
@@ -67,7 +66,7 @@ print("------------------------------------------------------")
 
 
 for index in range(0, count):
-    print(f"{product_list[index]}{item_quantity_list[index]}{item_price_list[index]:.2f}{total_item_prices[index]:.2f}")
+    print(f"{product_list[index]:>15}{item_quantity_list[index]:>10}#{item_price_list[index]:>10.2f}#{total_item_prices[index]:>10.2f}")
 
 print("======================================================")
 
@@ -87,7 +86,7 @@ print("============================================================")
 print(f"THIS IS NOT A RECEIPT KINDLY PAY #{bill_total:.2f}")
 print("============================================================")
 
-deposit = float(input("How much did the customer give to you => "))
+deposit = float(input("How much did the customer give to you >> "))
 
 change = check_out_function.get_change(deposit, item_quantity_list, discount_rate)
 
@@ -110,8 +109,10 @@ print("======================================================")
 print("                ITEM    QTY     PRICE       TOTAL(NGN)")
 print("------------------------------------------------------")
 
-for index in range(0, count):
-    print(f"{product_list[index]}{item_quantity_list[index]}{item_price_list[index]:.2f}{total_item_prices[index]:.2f}")
+#for index in range(0, count):
+#    print(f"{product_list[index]}{item_quantity_list[index]}{item_price_list[index]:.2f}{total_item_prices[index]:.2f}")
+#
+get_item_loop(product_list, item_quantity_list, item_price_list, total_item_prices)
 
 
 print("======================================================")
@@ -133,15 +134,3 @@ print()
 print("============================================================")
 print("THANK YOU FOR YOUR PATRONAGE")
 print("============================================================")
-
-
-
-
-
-
-
-
-
-
-
- 
