@@ -58,6 +58,25 @@ public class StudentGrader{
             System.out.println();
         }
 
+//        System.out.println();
+//        System.out.println();
+
+        System.out.println("\n\nSUBJECT SUMMARY");
+
+        subjectCount = 1;
+        subjectIndex = 0;
+        for(int count = 0; count < subjectAmount; count++){
+
+            System.out.println("\n\nSubject "+ subjectCount);
+            System.out.printf("\nHighest scoring student is: Student %d scoring %d\n", StudentGraderFunctions.getHighestStudent(subjectIndex), StudentGraderFunctions.getHighest(subjectIndex));
+            System.out.printf("\nLowest scoring student is: Student %d scoring %d\n", StudentGraderFunctions.getLowestStudent(subjectIndex), StudentGraderFunctions.getLowest(subjectIndex));
+        System.out.printf("\nTotal SCore is: %d", StudentGraderFunctions.getSubjectTotal(subjectIndex));
+        System.out.printf("\nAverae Score is: %.2f", StudentGraderFunctions.getSubjectAverage(subjectIndex));
+        System.out.printf("\nNumber of passes: %d\nNumber of fails: %d", StudentGraderFunctions.getPasses(subjectIndex), StudentGraderFunctions.getFails(subjectIndex));
+        subjectIndex++;
+        subjectCount++;
+        }
+
     } // end main
 } //End class
 

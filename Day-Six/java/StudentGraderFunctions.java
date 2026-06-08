@@ -68,6 +68,110 @@ public class StudentGraderFunctions{
         return positions;
     }
 
+//========================================================================================
+
+    public static int getHighest(int subjectIndex){
+        int largest = scores[0][subjectIndex];
+
+        for(int count = 0; count < scores.length; count++){
+            if(scores[count][subjectIndex]> largest){
+                largest = scores[count][subjectIndex];
+            }
+        }
+        return largest;
+    }
+
+    public static int getLowest(int subjectIndex){
+        int largest = scores[0][subjectIndex];
+
+        for(int count = 0; count < scores.length; count++){
+            if(scores[count][subjectIndex] < largest){
+                largest = scores[count][subjectIndex];
+            }
+        }
+        return largest;
+    }
+
+    public static int getHighestStudent(int subjectIndex){
+        int studentAmount = scores.length;
+
+
+        int highestCount = 0;
+        int largest = scores[0][0];
+        for(int count = 0; count < studentAmount; count++){
+            if(scores[count][subjectIndex] > largest){
+                largest = scores[count][subjectIndex];
+                highestCount = count;
+            }
+        }
+        return highestCount + 1;
+    }
+
+    public static int getLowestStudent(int subjectIndex){
+
+
+        int largest = scores[0][0];
+        int lowestCount = 0;
+        for(int count = 0; count < scores.length; count++){
+            if(scores[count][subjectIndex] < largest){
+                largest = scores[count][subjectIndex];
+                lowestCount = count;
+            }
+        }
+        return lowestCount + 1;
+    }
+
+    public static int getSubjectTotal(int subjectIndex){
+
+        int subjectTotal = 0;
+        for(int count = 0; count < scores.length; count++){
+            subjectTotal += scores[count][subjectIndex];
+        }
+        return subjectTotal;
+    }
+
+    public static double getSubjectAverage(int subjectIndex){
+        double subjectAverage = 0;
+        for(int count = 0; count < scores.length; count++){
+            subjectAverage += (double)((double)scores[count][subjectIndex]/ scores.length);
+        }
+        return subjectAverage;
+    }
+
+    public static int getPasses(int subjectIndex){
+
+        int numberOfPasses = 0;
+        for( int count = 0; count < scores.length; count++){
+
+            if(scores[count][subjectIndex] < 50){
+                continue;
+            }
+            else{
+                numberOfPasses += 1;
+            }
+        }
+        return numberOfPasses;
+    }
+
+    public static int getFails(int subjectIndex){
+
+        int numberOfFails = 0;
+        for( int count = 0; count < scores.length; count++){
+
+            if(scores[count][subjectIndex] < 50){
+                numberOfFails += 1;
+            }
+            else{
+                continue;
+            }
+        }
+        return numberOfFails;
+    }
+
+
+
+
+
 
 //public static void main(String[] args){
 //        getDetails(4, 3);
@@ -84,9 +188,19 @@ public class StudentGraderFunctions{
 //        getScores(3, 1, 83);
 //        getScores(3, 2, 66);
 //
-//    System.out.println(Arrays.toString(getTotal()));
-//    System.out.println(Arrays.toString(getAverage(3)));
-//    System.out.println(Arrays.toString(getPosition()));
+//
+//      System.out.println(getSubjectTotal(0));
+//      System.out.println(getSubjectAverage(0));
+//      System.out.println(getPasses(0));
+//      System.out.println(getFails(0));
 //}
 
 }
+
+// System.out.println(Arrays.toString(getTotal()));
+//    System.out.println(Arrays.toString(getAverage(3)));
+//    System.out.println(Arrays.toString(getPosition()));
+//    System.out.println(getHighest(0));
+//    System.out.println(getLowest(0));
+//    System.out.println(getHighestStudent(0));
+//    System.out.println(getLowestStudent(0));
