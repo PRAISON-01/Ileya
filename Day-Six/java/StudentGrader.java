@@ -58,9 +58,6 @@ public class StudentGrader{
             System.out.println();
         }
 
-//        System.out.println();
-//        System.out.println();
-
         System.out.println("\n\nSUBJECT SUMMARY");
 
         subjectCount = 1;
@@ -73,10 +70,15 @@ public class StudentGrader{
         System.out.printf("\nTotal SCore is: %d", StudentGraderFunctions.getSubjectTotal(subjectIndex));
         System.out.printf("\nAverae Score is: %.2f", StudentGraderFunctions.getSubjectAverage(subjectIndex));
         System.out.printf("\nNumber of passes: %d\nNumber of fails: %d", StudentGraderFunctions.getPasses(subjectIndex), StudentGraderFunctions.getFails(subjectIndex));
+
         subjectIndex++;
         subjectCount++;
         }
-
+        System.out.printf("\nThe hardest subject has %d fails", StudentGraderFunctions.getHardestSubject(subjectAmount));
+        System.out.printf("\nThe Easiest subject has %d passes", StudentGraderFunctions.getEasiestSubject(subjectAmount));
+        System.out.printf("\nThe overall highest score %d", StudentGraderFunctions.getOverallHighest());
+        System.out.printf("\nThe overall lowestScore is %d", StudentGraderFunctions.getOverallHighest());
+System.out.println("\n\n========================================================");
     } // end main
 } //End class
 

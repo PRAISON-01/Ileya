@@ -307,6 +307,98 @@ public class StudentGraderTest{
         assertEquals(expected, actual);
 
     }
+//=====================================================================
+    @Test
+    public void testThatGetHardestSubjectReturnsTheSubjectWithTheMostFails(){
+
+        StudentGraderFunctions.getDetails(4, 3);
+        StudentGraderFunctions.getScores(0, 0, 67);
+        StudentGraderFunctions.getScores(0, 1, 21);
+        StudentGraderFunctions.getScores(0, 2, 49);
+        StudentGraderFunctions.getScores(1, 0, 98);
+        StudentGraderFunctions.getScores(1, 1, 62);
+        StudentGraderFunctions.getScores(1, 2, 56);
+        StudentGraderFunctions.getScores(2, 0, 93);
+        StudentGraderFunctions.getScores(2, 1, 34);
+        StudentGraderFunctions.getScores(2, 2, 27);
+        StudentGraderFunctions.getScores(3, 0, 78);
+        StudentGraderFunctions.getScores(3, 1, 83);
+        StudentGraderFunctions.getScores(3, 2, 66);
+
+        double actual = StudentGraderFunctions.getHardestSubject(3);
+        double expected = 2;
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testThatGetEasiestSubjectReturnsTheSubjectWithTheMostPasses(){
+
+        StudentGraderFunctions.getDetails(4, 3);
+        StudentGraderFunctions.getScores(0, 0, 67);
+        StudentGraderFunctions.getScores(0, 1, 21);
+        StudentGraderFunctions.getScores(0, 2, 49);
+        StudentGraderFunctions.getScores(1, 0, 98);
+        StudentGraderFunctions.getScores(1, 1, 62);
+        StudentGraderFunctions.getScores(1, 2, 56);
+        StudentGraderFunctions.getScores(2, 0, 93);
+        StudentGraderFunctions.getScores(2, 1, 34);
+        StudentGraderFunctions.getScores(2, 2, 27);
+        StudentGraderFunctions.getScores(3, 0, 78);
+        StudentGraderFunctions.getScores(3, 1, 83);
+        StudentGraderFunctions.getScores(3, 2, 66);
+
+        double actual = StudentGraderFunctions.getEasiestSubject(3);
+        double expected = 4;
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testThatGetOverallHighestReturnsTheSubjectWithTheHighestScore(){
+
+        StudentGraderFunctions.getDetails(4, 3);
+        StudentGraderFunctions.getScores(0, 0, 67);
+        StudentGraderFunctions.getScores(0, 1, 21);
+        StudentGraderFunctions.getScores(0, 2, 49);
+        StudentGraderFunctions.getScores(1, 0, 98);
+        StudentGraderFunctions.getScores(1, 1, 62);
+        StudentGraderFunctions.getScores(1, 2, 56);
+        StudentGraderFunctions.getScores(2, 0, 93);
+        StudentGraderFunctions.getScores(2, 1, 34);
+        StudentGraderFunctions.getScores(2, 2, 27);
+        StudentGraderFunctions.getScores(3, 0, 78);
+        StudentGraderFunctions.getScores(3, 1, 83);
+        StudentGraderFunctions.getScores(3, 2, 66);
+
+        double actual = StudentGraderFunctions.getOverallHighest();
+        double expected = 98;
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testThatGetHardestSubjectReturnsTheSubjectWithTheMostFailsScore(){
+
+        StudentGraderFunctions.getDetails(4, 3);
+        StudentGraderFunctions.getScores(0, 0, 67);
+        StudentGraderFunctions.getScores(0, 1, 21);
+        StudentGraderFunctions.getScores(0, 2, 49);
+        StudentGraderFunctions.getScores(1, 0, 98);
+        StudentGraderFunctions.getScores(1, 1, 62);
+        StudentGraderFunctions.getScores(1, 2, 56);
+        StudentGraderFunctions.getScores(2, 0, 93);
+        StudentGraderFunctions.getScores(2, 1, 34);
+        StudentGraderFunctions.getScores(2, 2, 27);
+        StudentGraderFunctions.getScores(3, 0, 78);
+        StudentGraderFunctions.getScores(3, 1, 83);
+        StudentGraderFunctions.getScores(3, 2, 66);
+
+        double actual = StudentGraderFunctions.getOverallLowest();
+        double expected = 21;
+        assertEquals(expected, actual);
+
+    }
 
 
 

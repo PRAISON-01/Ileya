@@ -53,12 +53,10 @@ public class StudentGraderFunctions{
     }
 
     public static int[] getPosition(){
-        int size = averages.length;
-        int[] positions = new int[size];
-        int positionCount;
-        for(int count = 0; count < size; count++){
-            positionCount = 0;
-            for(int index = 0; index < size; index++){
+        int[] positions = new int[averages.length];
+        for(int count = 0; count < averages.length; count++){
+            int positionCount = 0;
+            for(int index = 0; index < averages.length; index++){
                 if(averages[index] > averages[count]){
                     positionCount += 1;
                 }
@@ -68,7 +66,7 @@ public class StudentGraderFunctions{
         return positions;
     }
 
-//========================================================================================
+
 
     public static int getHighest(int subjectIndex){
         int largest = scores[0][subjectIndex];
@@ -167,6 +165,61 @@ public class StudentGraderFunctions{
         }
         return numberOfFails;
     }
+    public static int getHardestSubject(int subjectIndex){
+        int[] fails = new int[scores.length];
+        for(int count = 0; count < subjectIndex	; count++){
+            fails[count] = getFails(count);
+        }
+
+        int highestFail = fails[0];
+        for(int fail : fails){
+            if(fail > highestFail){
+                highestFail = fail;
+            }
+        }
+        return highestFail;
+    }
+
+    public static int getEasiestSubject(int subjectIndex){
+        int[] passes = new int[scores.length];
+        for(int count = 0; count < subjectIndex	; count++){
+            passes[count] = getPasses(count);
+        }
+
+        int highestpass = passes[0];
+        for(int pass : passes){
+            if(pass > highestpass){
+                highestpass = pass;
+            }
+        }
+        return highestpass;
+
+    }
+
+    public static int getOverallHighest(){
+        int highestScore = scores[0][0];
+        for(int[] student : scores){
+            for(int score : student){
+                if(score > highestScore){
+                    highestScore = score;
+                }
+            }
+        }
+        return highestScore;
+    }
+
+    public static int getOverallLowest(){
+        int lowestScore = scores[0][0];
+        for(int[] student : scores){
+            for(int score : student){
+                if(score < lowestScore){
+                    lowestScore = score;
+                }
+            }
+        }
+        return lowestScore;
+    }
+
 
 
 
@@ -189,12 +242,11 @@ public class StudentGraderFunctions{
 //        getScores(3, 2, 66);
 //
 //
-//      System.out.println(getSubjectTotal(0));
-//      System.out.println(getSubjectAverage(0));
-//      System.out.println(getPasses(0));
-//      System.out.println(getFails(0));
+//    System.out.println(getEasiestSubject(3));
+//    System.out.println(getOverallHighest());
+//    System.out.println(getOverallLowest());
 //}
-
+//
 }
 
 // System.out.println(Arrays.toString(getTotal()));
@@ -204,3 +256,10 @@ public class StudentGraderFunctions{
 //    System.out.println(getLowest(0));
 //    System.out.println(getHighestStudent(0));
 //    System.out.println(getLowestStudent(0));
+
+//System.out.println(getSubjectTotal(0));
+//      System.out.println(getSubjectAverage(0));
+//      System.out.println(getPasses(0));
+//      System.out.println(getFails(0));
+//    System.out.println(Arrays.toString(getAverage(3)));
+//    System.out.println(Arrays.toString(getPosition()));
